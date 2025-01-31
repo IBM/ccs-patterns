@@ -12,7 +12,7 @@ This pattern allows on-premise traffic to flow into a set of firewalls prior to 
 
 Note that some additional configuration will be needed on the classic gateway appliance(s) and on the DNS server, bastion and proxy VSIs to make this pattern operational (see the Post deployment tasks section).
 
-![Hybrid cloud networking classic single region](classic-VRF.jpg)
+![Hybrid cloud networking classic single region](classic-VRF.svg)
 
 ## Pre-requisites
 
@@ -110,9 +110,10 @@ Note that some additional configuration will be needed on the classic gateway ap
 - if there was a pre-existing classic gateway appliance, associate the VLANs created by the automation to it
 - finish the configuration of the classic gateway appliance (VLANs configuration, firewall rules configuration)
 - add a second [cloud connection](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-cloud-connections#create-cloud-connections) in the PowerVS workspace created by the automation for redundancy and configure GRE on it
-- configure two GRE tunnel interfaces on the classic gateway appliance(s) to terminate the PowerVS to classic GRE tunnels and configure BGP over these tunnels (labbeled as GREc on the diagram)
+- configure two GRE tunnel interfaces on the classic gateway appliance(s) to terminate the PowerVS to classic GRE tunnels and configure BGP over these tunnels (labelled as GREc on the diagram)
 - install and configure the DNS server, proxy and bastion softwares on the VSIs created by the automation
 - order two [direct link](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) from on-prem to the environment
-- once the direct links are operationl, configure two GRE tunnels between the classic gateway appliance and the on premises customer router (labelled as GREa on the diagram) and configure BGP over these GRE tunnels.
+- once the direct links are operational, configure two GRE tunnels between the classic gateway appliance and the on premises customer router (labelled as GREa on the diagram) and configure BGP over these GRE tunnels.
 - adjust the [security groups rules](https://cloud.ibm.com/docs/security-groups?topic=security-groups-creating-security-groups) of the VSIs created by the automation as needed.
 - install and configure the DNS server, proxy and bastion softwares on the VSIs created by the automation
+- Optionally - provision an IBM Cloud Load Balancer or a Citrix VPX load balancer from the IBM cloud portal if needed
