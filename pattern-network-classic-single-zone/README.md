@@ -1,4 +1,4 @@
-# hybrid-cloud-networking-classic-single-zone-pattern-automation
+# Hybrid cloud network for classic infrastructure disaster recovery
 
 This terraform code deploys the base networking infrastructure from the IBM Cloud Classic Edge gateway pattern described in detail here <https://cloud.ibm.com/docs/pattern-network-vrf-only?topic=pattern-network-vrf-only-introduction> into a single IBM Cloud region.
 
